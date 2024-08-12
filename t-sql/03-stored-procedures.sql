@@ -1,11 +1,7 @@
-CREATE OR ALTER PROCEDURE CONVERTCELSIUSTOFAHRENHEIT
-@celsius real
-as
-select @celsius*1.8+32 as Fahrenheit
-GO 
 
-exec CONVERTCELSIUSTOFAHRENHEIT 0 
-
+-- Stored procedure that does a calculation
+-- Example from docs
+EXEC CONVERTCELSIUSTOFAHRENHEIT 0 
 GO
 
 -- View all existing procedures
@@ -16,16 +12,4 @@ GO
 USE Northwind
 GO
 
-SELECT 
-TOP(5)
- EmployeeID,
- CONCAT(LastName, FirstName)
-  AS FullName
-FROM Employees
-ORDER BY HireDate;
-
--- CREATE OR ALTER PROCEDURE getNewEmployees
--- @celsius real
--- as
--- select @celsius*1.8+32 as Fahrenheit
--- GO 
+EXEC SELECTRECENTHIRES
